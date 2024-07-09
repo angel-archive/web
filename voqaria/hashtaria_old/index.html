@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hashtaria</title>
+  <link href="https://em-content.zobj.net/thumbs/120/google/350/world-map_1f5fa-fe0f.png" rel="icon"
+        type="image/x-icon">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link href="/scripts/map.css" rel="stylesheet">
+  <link href="/scripts/leaflet/leaflet.css" rel="stylesheet">
+  <script src="/scripts/leaflet/leaflet.js"></script>
+</head>
+
+<body>
+
+<div id="map"></div>
+<script type="text/javascript">
+  var tilesURL = 'https://tiles.blowninto.space/voqaria/hashtaria_old'
+  //Creating the Mapvar minZoom = 2
+  var minZoom = 2
+  var nativeZoom = 8
+  var maxZoom = nativeZoom
+
+  var map = new L.map('map', {
+    crs: L.CRS.Simple,
+    center: [0, 0],
+    zoom: 3,
+    //scrollWheelZoom: false,
+    //zoomDelta: 6,
+    wheelPxPerZoomLevel: 512,
+    minZoom: minZoom,
+    maxZoom: maxZoom
+  })
+
+
+  // Base Map Layer
+  L.tileLayer(tilesURL + '/continent/{z}/{x}/{y}.png', {
+    continuousWorld: false,
+    attribution: 'Hashtaria, by Bailey Allen and Alec Jordan | <a href="./hashtaria.pdf">Download</a>',
+    noWrap: true,
+    minZoom: minZoom,
+    maxNativeZoom: nativeZoom,
+    maxZoom: maxZoom
+  }).addTo(map);
+
+
+  map.on('click', function (e) {
+    console.log("latitude: " + e.latlng.lat + ", longitude: " + e.latlng.lng + ", zoom: " + map.getZoom());
+  });
+
+  map.setView([-100, 75], 2);
+
+  //Boundaries Variables
+  var mapSW = [-380, 350], mapNE = [200, -200];
+  map.setMaxBounds(new L.LatLngBounds(mapSW, mapNE));
+
+</script>
+</body>
+</html>
