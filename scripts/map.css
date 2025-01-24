@@ -13,11 +13,11 @@ html, body {
     bottom: 0;
     left: 0;
     right: 0;
-    background-image: url("https://map.vorbe.cc/images/paper.webp");
+    /* background-image: url("https://map.vorbe.cc/images/paper.webp");
     background-color: transparent;
     background-attachment: fixed;
     background-position: center center;
-    background-size: cover;
+    background-size: cover; */
 }
 #map {
     mix-blend-mode:multiply;

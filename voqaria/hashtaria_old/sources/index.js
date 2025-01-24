@@ -9,7 +9,7 @@
       15994
     ]
 
-    var tilesURL = 'https://tiles.blowninto.space/voqaria/other/placentia'
+    var tilesURL = 'https://angel-archive.github.io/tiles/voqaria/other/placentia'
 
 
     // the tile layer containing the image generated with gdal2tiles --leaflet ...
